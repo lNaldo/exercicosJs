@@ -7,32 +7,39 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="">
+        <label for="idNumero"></label>
+        <input type="number" id="idNumero" name="nmNumero" placeholder=" DIGITE AQUI ">
 
-    <output id="idOut"></output>
-    <output id="idOuti"></output>
+        <input type="button" value="Contar" onclick="contarNumero()">
+        
+        
+        <output id="idOut"></output>
+        <!-- <output id="idOuti"></output> -->
+    </form>
     <script>
-           
-        var contar = 5
+        function contarNumero(){
+        var contar = document.getElementById("idNumero")   
+        
         var texto = ""
         var out = document.getElementById("idOut")
 
-        while ( contar <= 12 ){
+        while ( contar > 0 ){
             texto = texto + contar + " "
             contar++ 
-            
              
         }
         out.value = " Inicio " + texto + " fim... "
         
-        
+
         var proximo = 0
         outi = document.getElementById("idOuti")
-        for (let contarr = 5; contarr <= 12 ; contarr++) {
+        for (let contarr = 100; contarr >= 0 ; contarr-= 4 ) {
             proximo = proximo + contarr + " "
             outi.value = " Inicio " + proximo + " fim.. "            
         }
     
-    
+        }
     
     
     

@@ -7,27 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-
     <output id="idOut"></output>
     <output id="idOuti"></output>
     <script>
            
-        var contar = 5
+        var contar = 0
         var texto = ""
         var out = document.getElementById("idOut")
 
-        while ( contar <= 12 ){
+        while ( contar <= 20 ){
             texto = texto + contar + " "
-            contar++ 
-            
+            contar+= 4   
              
         }
         out.value = " Inicio " + texto + " fim... "
         
-        
+
         var proximo = 0
         outi = document.getElementById("idOuti")
-        for (let contarr = 5; contarr <= 12 ; contarr++) {
+        for (let contarr = 0; contarr <= 20 ; contarr+= 4 ) {
             proximo = proximo + contarr + " "
             outi.value = " Inicio " + proximo + " fim.. "            
         }
