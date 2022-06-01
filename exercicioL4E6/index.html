@@ -8,39 +8,45 @@
 </head>
 <body>
     <form action="">
-        <label for="idLimite">Limite de contagem</label><br>
-        <input type="number" name="nmLimite" id="idLimite">
-        <br><br>
         <button type="button" onclick="contarWhile()">Contar While</button>
         <output id="idOutWhile"></output>
         <br><br>
         <button type="button" onclick="contarFor()">Contar For</button>
-        <output id="idOutFor"></output>            
+        <output id="idOutFor"></output>
     </form>
 
     <Script>
 
-        function contarWhile(){
-            let cont = 1 
-            let limite = Number(document.getElementById("idLimite").value)
+        function contarWhile() {
+            let cont = 30
             let textoCont = ""
-            limite++
 
-            while (cont < limite) {
-                textoCont = textoCont + cont + " "
-                cont = cont + 1
+
+            while (cont > 0) {
+
+                if ((cont % 4) == 0) {
+                    textoCont = textoCont + "[" + cont + "] "
+                } else {
+                    textoCont = textoCont + cont + " "
+                }
+                cont = cont - 1
             }
 
             document.getElementById("idOutWhile").value = "Inicio " + textoCont + " Acabou!"
         }
 
 
-        function contarFor() {  
+        function contarFor() {
             let textoCont = ""
-            let limite = Number(document.getElementById("idLimite").value)
+     
 
-            for (let ind = 1; ind <= limite; ind++ ) {
-                textoCont = textoCont + ind + " "
+            for (let ind = 30; ind > 0; ind--) {
+
+                if ((ind % 4) == 0) {
+                    textoCont = textoCont + "[" + ind + "] "
+                } else {
+                    textoCont = textoCont + ind + " "
+                } 
             }
             document.getElementById("idOutFor").value = "Inicio " + textoCont + " Acabou!"
         }

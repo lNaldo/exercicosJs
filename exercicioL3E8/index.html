@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="idValorcompra">Valor da compra:</label><br>
+        <input type="number" id="idValorcompra" name="nmValorcompra" step="0.01">
+        <br><br>
+        
+        <output id="idOut"></output>
+        <br><br>
+        <input type="button" value="Enviar" onclick="calcularValor()">
+
+    </form>
+
+    <script>
+        function calcularValor() {
+            let vcompra = Number(document.getElementById("idValorcompra").value) 
+            let valortotal
+            
+            let out = document.getElementById("idOut")
+
+            
+            if (vcompra < 20) {
+                valortotal = vcompra * 1.50
+
+            } else if (vcompra >= 20) {
+                valortotal = vcompra * 1.35
+
+                }
+            
+                                            
+            document.getElementById("idOut").value = " O valor total da compra é " + valortotal
+            
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <label for="idTempC">Temperatura em °C:</label><br>
+        <input type="number" id="idTempC" name="nmTempC">
+        <br><br>
+        <input type="button" value="Enviar" onclick="enviar()">
+        <br><br>
+        <output id="idOut">Temperatura em °F :"</output>
+        <br>
+    </form>
+
+    <script>
+        var celsius = document.getElementById("idTempC")
+        var fahrenheit = 0
+        
+       // out = document.getElementById("idOut")
+        
+        function enviar(){
+        
+        if (celsius.value) {
+           
+           //fahrenheit = (Number(celsius.value) + 160)/ 5
+           fahrenheit = (Number(celsius.value) * 9/5 ) + 32
+        }           
+        
+        //× 9/5) + 32 = 33,8
+        //console.log(fahrenheit);
+        document.getElementById("idOut").value = "A temperatura é : " + fahrenheit + " °F " 
+        }    
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <label for="idValorMoeda">:</label><br>
+        <input type="number" id="idValorMoeda" name="nmMoeda">
+        <br><br>
+        
+        <label for="idCelsiusL"> Real: </label>
+        <input type="checkbox" id="idCelsius" name="nmTemp">
+        <br><br>
+        
+        <label for="idFahrenheitL"> Dolar EUA:</label>
+        <input type="checkbox" id="idFahrenheit" name="nmTemp">
+        <br><br>
+
+        <label for="idKelvinL">Euro: </label>
+        <input type="checkbox" id="idKelvin" name="nmTemp">
+        <br><br>
+
+        <label for="idKelvinL">Dolar Canadense : </label>
+        <input type="checkbox" id="idKelvin" name="nmTemp">
+        <br><br>
+        
+        
+        <input type="button" value="Ver temperatura" onclick="enviar()">
+        <br><br>
+        <output id="idOut"></output><br>
+        <output id="idOuti"></output>
+       
+        <br>
+    
+    </form>
+
+    <script>
+                 
+        
+        function enviar(){
+            
+            var temperatura = document.getElementById("idTemperatura")
+            var celsius = document.getElementById("idCelsius")
+            var fahrenheit = document.getElementById("idFahrenheit")
+            var kelvin = document.getElementById("idKelvin") 
+            
+                if (celsius.value = true) {
+                fahrenheit = (Number((temperatura.value) * 1.8) + 32)
+                kelvin = (Number(temperatura.value) + 273)
+                
+                    document.getElementById("idOut").value = "A temperatura em  : " + fahrenheit + " °F " 
+                    document.getElementById("idOuti").value = "A temperatura é : " + kelvin + " k "    
+                
+                }else if(fahrenheit.value = true){
+                    celsius = (Number(temperatura.value) - 32)/1.8
+                    kelvin = (Number(temperatura) - 32) * 5 / 9 + 273
+                
+                    document.getElementById("idOut").value = "A temperatura em  : " + celsius + " °C " 
+                    document.getElementById("idOuti").value = "A temperatura é : " + kelvin + " k "    
+                }else {
+                    celsius = (Number(temperatura.value) - 273)
+                    fahrenheit = (Number(temperatura) - 273)* 1.8 + 32
+                
+                    document.getElementById("idOut").value = "A temperatura em  : " + celsius + " °C " 
+                    document.getElementById("idOuti").value = "A temperatura é : " + fahrenheit + " k "    
+                }  
+            
+        }    
+            
+
+    </script>
+
+</body>
+</html>

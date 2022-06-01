@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="idNum1"><h1>Escolha a forma geométrica que deseja calcular</h1></label>
+        <br>
+                
+        <label for="idCirculo">Circulo:</label>
+        <input type="radio" id="idCirculo" name="nmformasGeometricas">
+        <br><br>
+
+        <label for="idRetangulo">Retângulo:</label>
+        <input type="radio" id="idRetangulo" name="nmformasGeometricas">
+        <br><br>
+        
+        <label for="idTriRetangulo">Triangulo retângulo:</label>
+        <input type="radio" id="idTriRetangulo" name="nmformasGeometricas">
+        <br><br>
+
+        <label for="idTriEquilatero">Triangulo equilatero:</label>
+        <input type="radio" id="idTriEquilatero" name="nmformasGeometricas">
+        <br><br>
+
+        <label for="" id="idLmedidaBase">Raio</label>
+        <input type="number" id="idMedidaBase" name="nmMedidaBase" step="0.01">
+        <br><br>
+       
+        <label for="" id="idLmedidaSeq">Altura</label>
+        <input type="number" id="idMedidaSeq" name="nmMedidaseq" step="0.01">
+        <br><br>
+        <output id="idOut">Area</output>
+        <br><br>
+        <input type="button" value="Enviar" onclick="escolherFormaGeo()">
+        <input type="button" value="Enviar" onclick="enviarNumeros()">
+
+    </form>
+
+    <script>
+        
+        function calcularArea() {
+                const opCirculo = document.getElementById("idCirculo").checked
+                const opRetangulo = document.getElementById("idRetangulo").checked
+                const opTriRetangulo = document.getElementById("idTriRetangulo").checked
+                const opTriEquilatero = document.getElementById("idTriEquilatero").checked
+
+                const baseRaioLado = Number(document.getElementById("idMedidaBase").value)
+                const altura = Number(document.getElementById("idMedidaSeq").value)
+                let area
+
+                if (opCirculo) {
+                    console.log("raio " + baseRaioLado );
+                    area = baseRaioLado * baseRaioLado * Math.PI
+                } else if (opRetangulo) {
+                    area = baseRaioLado * altura
+                } else if (opTriRetangulo) {
+                    area = (baseRaioLado * altura)/2
+                } else if (opTriEquilatero) {
+                    area = ((baseRaioLado * baseRaioLado) * (3 **(1/2)))/4 
+                }
+
+                console.log("Area " + area);
+                document.getElementById("idOut").value = "Area: " + area
+            }
+
+        
+        
+        
+        
+        
+        
+        function escolherFormaGeo() {
+            const opcirculo = document.getElementById("idCirculo").Checked
+            const opRetangulo = document.getElementById("idRetangulo").Checked
+            const opTriRetangulo = document.getElementById("idTriRetangulo").Checked
+            const opTriEquilatero = document.getElementById("idTriEquilatero").Checked
+           
+            if (opcirculo) {
+                document.getElementById("idMedidaBase").hidden = true
+                document.getElementById("idMedidaSeq").hidden = true
+
+                document.getElementById("idLmedidaBase").innerText = "Raio"
+            } else if(opRetangulo){
+                document.getElementById("idMedidaBase").hidden = false
+                document.getElementById("idMedidaSeq").hidden = false
+
+                document.getElementById("idLmedidaBase").innerText = "Base"
+                document.getElementById("idLmedidaSeq").innerText = "Altura"
+                
+            }  else if (opTriRetangulo){
+                document.getElementById("idMedidaBase").hidden = false
+                document.getElementById("idMedidaSeq").hidden = false
+
+                document.getElementById("idLmedidaBase").innerText = "Base"
+                document.getElementById("idLmedidaSeq").innerText = "Altura"
+
+            }  else if (opTriEquilatero) {
+                document.getElementById("idMedidaBase").hidden = false
+                document.getElementById("idMedidaSeq").hidden = false   
+                
+                document.getElementById("idLmedidaBase").innerText = "lado"
+            }
+        
+        
+        
+        
+        }
+
+    </script>
+</body>
+</html>
