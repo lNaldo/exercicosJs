@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="idTitulo">CALCULADORA</h1>
+    <style>
+        body{
+            background-color: aquamarine;
+            
+        }
+        #idTitulo{
+            color: antiquewhite;
+            border-style: double dotted;
+            text-align: center;
+            background-color:darkred;
+            font-style: unset;
+            font-weight: bolder;
+
+        }
+        input[type=text]{
+            border-style: double;
+            background-position: 50vw;
+
+
+        }
+        
+        input[type=number]{
+            border-style: mixed;
+            background-position: 50vw;
+            margin-left: 1vw;
+            
+        }
+        
+        input[type=button]{
+            border-style: mixed;
+            background-color: brown;
+            margin-left: 1vw;
+            
+        }
+
+    </style>
+    <form action="">
+
+        
+        <input type="number" id="idNum1" name="nmNum1" placeholder="Numero 1">
+        <br><br>
+        
+        <input type="text" id="idOperador" name="nmOperador" placeholder="Operadores">
+        <br><br>
+        
+        <input type="number" id="idNum2" name="nmNum2" placeholder="Numero 2">
+        <br><br>
+        <input type="text" id="idResultado" name="nmResultado" placeholder="Resultado">
+        <br><br>
+                
+        <input type="button" value="Enviar" onclick="enviarNumeros()">
+
+    </form>
+
+    <script>
+        function enviarNumeros() {
+            let num1 = Number(document.getElementById("idNum1").value) 
+            let operador = document.getElementById("idOperador").value 
+            let num2 = Number(document.getElementById("idNum2").value) 
+            let resultado = document.getElementById("idResultado")
+            
+            if (operador == "+" ) {
+                resultado.value = num1 + num2 
+                   
+            }else if (operador == "-") {
+                resultado.value = num1 - num2 
+
+            } else if (operador == "*" ){
+                resultado.value = num1 * num2 
+
+            }else if (operador == "/") {
+                resultado.value = num1 / num2 
+                
+            }else { 
+               alert("operação invalida")                     
+            }
+
+            
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>

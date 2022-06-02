@@ -8,32 +8,53 @@
 </head>
 <body>
      <form action="">
-        <label for="idValorMoeda">:</label><br>
+        <label for="idValorMoeda">Valor da moeda para conversão:</label><br>
         <input type="number" id="idValorMoeda" name="nmMoeda">
         <br><br>
         
-        <label for="idCelsiusL"> Real: </label>
-        <input type="checkbox" id="idCelsius" name="nmTemp">
+        <h1>Escolha a moeda para converter </h1>
+
+        <label for="idReal"> Real: </label>
+        <input type="radio" id="idReal" name="nmMoeda">
         <br><br>
         
-        <label for="idFahrenheitL"> Dolar EUA:</label>
-        <input type="checkbox" id="idFahrenheit" name="nmTemp">
+        <label for="idDolarEua"> Dolar EUA:</label>
+        <input type="radio" id="idDolarEua" name="nmMoeda">
         <br><br>
 
-        <label for="idKelvinL">Euro: </label>
-        <input type="checkbox" id="idKelvin" name="nmTemp">
+        <label for="idEuro">Euro: </label>
+        <input type="radio" id="idEuro" name="nmMoeda">
         <br><br>
 
-        <label for="idKelvinL">Dolar Canadense : </label>
-        <input type="checkbox" id="idKelvin" name="nmTemp">
+        <label for="idDolarCana">Dolar Canadense : </label>
+        <input type="radio" id="idDolarCana" name="nmMoeda">
+        <br><br>
+
+        <h1>Moeda para conversão</h1>
+
+        <label for="idReal1"> Real: </label>
+        <input type="radio" id="idReal1" name="nmMoeda1">
+        <br><br>
+        
+        <label for="idDolarEua1"> Dolar EUA:</label>
+        <input type="radio" id="idDolarEua1" name="nmMoeda1">
+        <br><br>
+
+        <label for="idEuro1">Euro: </label>
+        <input type="radio" id="idEuro1" name="nmMoeda1">
+        <br><br>
+
+        <label for="idDolarCana1">Dolar Canadense : </label>
+        <input type="radio" id="idDolarCana1" name="nmMoeda1">
         <br><br>
         
         
-        <input type="button" value="Ver temperatura" onclick="enviar()">
+        <input type="button" value="Converter" onclick="enviar()">
+
+        <!--<input type="button" value="resetar" onclick="resetar()">-->
         <br><br>
         <output id="idOut"></output><br>
-        <output id="idOuti"></output>
-       
+        
         <br>
     
     </form>
@@ -43,35 +64,108 @@
         
         function enviar(){
             
-            var temperatura = document.getElementById("idTemperatura")
-            var celsius = document.getElementById("idCelsius")
-            var fahrenheit = document.getElementById("idFahrenheit")
-            var kelvin = document.getElementById("idKelvin") 
+            var isValorMoeda = document.getElementById("idValorMoeda").value
             
-                if (celsius.value = true) {
-                fahrenheit = (Number((temperatura.value) * 1.8) + 32)
-                kelvin = (Number(temperatura.value) + 273)
-                
-                    document.getElementById("idOut").value = "A temperatura em  : " + fahrenheit + " °F " 
-                    document.getElementById("idOuti").value = "A temperatura é : " + kelvin + " k "    
-                
-                }else if(fahrenheit.value = true){
-                    celsius = (Number(temperatura.value) - 32)/1.8
-                    kelvin = (Number(temperatura) - 32) * 5 / 9 + 273
-                
-                    document.getElementById("idOut").value = "A temperatura em  : " + celsius + " °C " 
-                    document.getElementById("idOuti").value = "A temperatura é : " + kelvin + " k "    
-                }else {
-                    celsius = (Number(temperatura.value) - 273)
-                    fahrenheit = (Number(temperatura) - 273)* 1.8 + 32
-                
-                    document.getElementById("idOut").value = "A temperatura em  : " + celsius + " °C " 
-                    document.getElementById("idOuti").value = "A temperatura é : " + fahrenheit + " k "    
-                }  
+            var isReal = document.getElementById("idReal").checked
+            var isDolarEua = document.getElementById("idDolarEua").checked
+            var isEuro = document.getElementById("idEuro").checked
+            var isDolarCana = document.getElementById("idDolarCana").checked
             
-        }    
+            var isReal1 = document.getElementById("idReal1").checked
+            var isDolarEua1 = document.getElementById("idDolarEua1").checked
+            var isEuro1 = document.getElementById("idEuro1").checked
+            var isDolarCana1 = document.getElementById("idDolarCana1").checked
+            var resultado
             
 
+                // Real para outras moedas...
+                if (isReal && isDolarEua1) {
+                    resultado = Number(isValorMoeda) / 4.8
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
+                                 
+                   
+                
+                }else if(isReal && isEuro1){
+                    resultado = Number(isValorMoeda) / 5.13
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)    
+                
+                }else if(isReal && isDolarCana1){
+                    resultado = Number(isValorMoeda) / 3.8
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)     
+                
+                }else {
+                    resultado = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
+                }    
+                  
+                // Dolar EUA para outras moedas...
+                
+                if (isDolarEua && isReal1) {
+                    resultado = Number(isValorMoeda) * 0.21
+                    document.getElementById("idOut").value = "O valor é " + reresultado.toFixed(2)
+                                        
+                
+                }else if(isDolarEua && isEuro1){
+                    euro = Number(isValorMoeda) / 1.07
+                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)    
+                
+                }else if(isDolarEua && isDolarCana1){
+                    dolarCanadense = Number(isValorMoeda) * 0.79
+                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)     
+                
+                }else{
+                    dolarEua = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)
+                }       
+                 // Euro para outras moedas...
+
+                 if (isEuro && isReal1) {
+                    real = Number(isValorMoeda) * 0.19
+                    document.getElementById("idOut").value = "O valor é " + real.toFixed(2)
+                                        
+                
+                }else if(isEuro && isDolarEua1){
+                    dolarEua = Number(isValorMoeda) * 0.94
+                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)    
+                
+                }else if(isEuro && isDolarCana1){
+                    dolarCanadense = Number(isValorMoeda) * 0.74
+                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)     
+                
+                }else{
+                    euro = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)
+                }       
+                 
+                // Dolar canadense para outras moedas...
+
+                 if (isDolarCana && isReal1) {
+                    real = Number(isValorMoeda) * 0.26
+                    document.getElementById("idOut").value = "O valor é " + real.toFixed(2)
+                                        
+                
+                }else if(isDolarCana && isDolarEua1){
+                    dolarEua = Number(isValorMoeda) / 1.27
+                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)    
+                
+                }else if(isDolarCana && isEuro1){
+                    euro = Number(isValorMoeda) / 1.35
+                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)     
+                
+                }else{
+                    dolarCanadense = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)
+                }       
+                    console.log(isValorMoeda);
+         }    
+       // function resetar(){     
+                    
+               //document.getElementById("idValorMoeda").value = ""
+                //document.querySelector('[name="nmMoeda"]').checked = false
+                //document.querySelector('[name="nmMoeda1"]').checked = false
+
+
+        //}            
     </script>
 
 </body>
