@@ -51,7 +51,7 @@
         
         <input type="button" value="Converter" onclick="enviar()">
 
-        <!--<input type="button" value="resetar" onclick="resetar()">-->
+        
         <br><br>
         <output id="idOut"></output><br>
         
@@ -82,9 +82,7 @@
                 if (isReal && isDolarEua1) {
                     resultado = Number(isValorMoeda) / 4.8
                     document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
-                                 
-                   
-                
+
                 }else if(isReal && isEuro1){
                     resultado = Number(isValorMoeda) / 5.13
                     document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)    
@@ -93,79 +91,73 @@
                     resultado = Number(isValorMoeda) / 3.8
                     document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)     
                 
-                }else {
-                    resultado = Number(isValorMoeda) 
+                }else if(isReal && isReal1){
+                   resultado = Number(isValorMoeda) 
                     document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
-                }    
-                  
-                // Dolar EUA para outras moedas...
-                
-                if (isDolarEua && isReal1) {
+                    console.log("Pedro");
+                 
+                // Dolar EUA para outras moedas...          
+                }else if (isDolarEua && isReal1) {
                     resultado = Number(isValorMoeda) * 0.21
-                    document.getElementById("idOut").value = "O valor é " + reresultado.toFixed(2)
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
                                         
                 
                 }else if(isDolarEua && isEuro1){
-                    euro = Number(isValorMoeda) / 1.07
-                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)    
+                    resultado = Number(isValorMoeda) / 1.07
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)    
                 
                 }else if(isDolarEua && isDolarCana1){
-                    dolarCanadense = Number(isValorMoeda) * 0.79
-                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)     
+                    resultado = Number(isValorMoeda) * 0.79
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)     
                 
-                }else{
-                    dolarEua = Number(isValorMoeda) 
-                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)
-                }       
+                }else if(isDolarEua && isDolarEua1 ){
+                    resultado = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
+                    console.log("Naldo");
+                       
                  // Euro para outras moedas...
 
-                 if (isEuro && isReal1) {
-                    real = Number(isValorMoeda) * 0.19
-                    document.getElementById("idOut").value = "O valor é " + real.toFixed(2)
+                } else if (isEuro && isReal1) {
+                    resultado = Number(isValorMoeda) * 0.19
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
                                         
                 
                 }else if(isEuro && isDolarEua1){
-                    dolarEua = Number(isValorMoeda) * 0.94
-                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)    
+                    resultado = Number(isValorMoeda) * 0.94
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)    
                 
                 }else if(isEuro && isDolarCana1){
-                    dolarCanadense = Number(isValorMoeda) * 0.74
-                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)     
+                    resultado = Number(isValorMoeda) * 0.74
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)     
                 
-                }else{
-                    euro = Number(isValorMoeda) 
-                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)
-                }       
+                }else if(isEuro && isEuro1){
+                    resultado = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
+                       
                  
                 // Dolar canadense para outras moedas...
 
-                 if (isDolarCana && isReal1) {
-                    real = Number(isValorMoeda) * 0.26
-                    document.getElementById("idOut").value = "O valor é " + real.toFixed(2)
+                }else if (isDolarCana && isReal1) {
+                    resultado = Number(isValorMoeda) * 0.26
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
                                         
                 
                 }else if(isDolarCana && isDolarEua1){
-                    dolarEua = Number(isValorMoeda) / 1.27
-                    document.getElementById("idOut").value = "O valor é " + dolarEua.toFixed(2)    
+                    resultado = Number(isValorMoeda) / 1.27
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)    
                 
                 }else if(isDolarCana && isEuro1){
-                    euro = Number(isValorMoeda) / 1.35
-                    document.getElementById("idOut").value = "O valor é " + euro.toFixed(2)     
+                    resultado = Number(isValorMoeda) / 1.35
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)     
                 
                 }else{
-                    dolarCanadense = Number(isValorMoeda) 
-                    document.getElementById("idOut").value = "O valor é " + dolarCanadense.toFixed(2)
+                    resultado = Number(isValorMoeda) 
+                    document.getElementById("idOut").value = "O valor é " + resultado.toFixed(2)
                 }       
-                    console.log(isValorMoeda);
-         }    
-       // function resetar(){     
                     
-               //document.getElementById("idValorMoeda").value = ""
-                //document.querySelector('[name="nmMoeda"]').checked = false
-                //document.querySelector('[name="nmMoeda1"]').checked = false
-
-
-        //}            
+        
+    
+            }
     </script>
 
 </body>
