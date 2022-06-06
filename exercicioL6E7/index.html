@@ -8,31 +8,33 @@
 </head>
 <body>
     <form action="">
-        <label for="idNomes">Nomes</label>
-        <input type="text" id="idNomes" name="nmNomes">
-
-        <output id="idOut"></output>
-
-        <input type="button" value="Clique aqui" onclick="coletarNomes()">
-
-        
-        
+        <label for="idNome">Nome:</label><br>
+        <input type="text" id="idNome">
+        <br><br>
+        <input type="button" value="Incluir" onclick="incluir()">
+        <input type="button" value="Relatório" onclick="imprimirRel()">
     </form>
 
-
     <script>
-        let nomes = []
-        
-        function coletarNomes(){
-            let nome = document.getElementById("idNomes")
-            
-            nomes.push(nome) 
+            var nomes = []
 
-            console.log(nomes);
-         
-        }
-        
-         
+            function incluir() {
+                let nome = document.getElementById("idNome").value
+                nomes.push(nome)
+                document.getElementById("idNome").value = ""
+                console.log(nomes);
+            }
+
+            function imprimirRel() {
+                let nomesInvertido = []
+                for (let i = 0; i < nomes.length; i++) {
+                    nomesInvertido.unshift(nomes[i]);
+                    console.log(nomesInvertido);
+                }
+
+            }
+
+
     </script>
 </body>
 </html>

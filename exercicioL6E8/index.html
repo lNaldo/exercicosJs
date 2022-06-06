@@ -8,31 +8,39 @@
 </head>
 <body>
     <form action="">
-        <label for="idNomes">Nomes</label>
-        <input type="text" id="idNomes" name="nmNomes">
+        <label for="idNumeros">Digitar numeros:</label><br>
+        <input type="number" id="idNumeros">
+        <br><br>
+        <input type="button" value="Incluir" onclick="incluir()">
+        <input type="button" value="Relatório" onclick="Relatorio()">
+        <br><br>
 
         <output id="idOut"></output>
-
-        <input type="button" value="Clique aqui" onclick="coletarNomes()">
-
-        
+        <output id="idOutvetor"></output>
         
     </form>
 
-
     <script>
-        let nomes = []
-        
-        function coletarNomes(){
-            let nome = document.getElementById("idNomes")
-            
-            nomes.push(nome) 
+            var numeros = []
 
-            console.log(nomes);
-         
-        }
-        
-         
+            function incluir() {
+                let numero1 = Number(document.getElementById("idNumeros").value)
+                numeros.push(numero1)
+                //numeros.push(Number(document.getElementById("idNumeros").value))
+                document.getElementById("idNumeros").value = ""
+                //console.log(numero);
+            }  
+
+            function Relatorio() {
+                
+                for (let i = 0; i < numeros.length; i++) {
+                    numeros = (numeros % 10) == 0; 
+                    console.log();
+                }
+
+            }
+
+
     </script>
 </body>
 </html>
