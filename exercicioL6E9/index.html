@@ -16,20 +16,23 @@
         <br><br>
 
         <output id="idOut"></output>
-        <output id="idOutvetor"></output>
+        <output id="idOutPares"></output>
+        <output id="idOutDig"></output>
         
     </form>
 
     <script>
+            
             var numeros = []
             var out = document.getElementById("idOut")
-            var outvetor = document.getElementById("idOutvetor")
+            var outPares = document.getElementById("idOutPares")
+            var outDig = document.getElementById("idOutDig")
             out.value = "Números Digitados: "
-            outvetor.value = "Posições com multiplos de 10: "
-
+            outPares.value = "Posição no vetor: "
+            outDig.value = "Numeros pares digitados: "
+            
             function incluir() {
                 numeros.push(Number(document.getElementById("idNumeros").value))
-                //numeros.push(Number(document.getElementById("idNumeros").value))
                 document.getElementById("idNumeros").value = ""
                 console.log(numeros);
             }  
@@ -39,30 +42,17 @@
                 
                 for (let i = 0; i < numeros.length; i++) {
                     out.value = out.value + numeros[i] + " - "
-                    if (numeros[i] % 10 == 0 ) {
-                       outvetor.value = outvetor.value + i + " - "
-                   } 
+                    if (numeros[i] % 2 == 0 ) {
+                       outPares.value = outPares.value + i + " - " 
+                       if (numeros[i] % 2 == 0 ) {
+                           outDig.value = outDig.value + numeros[i] + " - "
+                       } 
+                    } 
                     
                 }
 
             }
-            
-            //function incluir() {
-                // numeros.push(Number(document.getElementById("idNum").value))
-                // document.getElementById("idNum").value = ""
-            //}
-
-            //function relatorio() {
-            //console.table(numeros)
-                
-            //for (let index = 0; index < numeros.length; index++) {
-                // outVetor.value = outVetor.value  + numeros[index] + " ; "
-                    
-                //if (numeros[index] % 10 == 0) {
-                // outItens.value = outItens.value + index + " ; "
-                // }
-               // }
-           // }
+        
     </script>
 </body>
 </html>
