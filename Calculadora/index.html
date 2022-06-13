@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+.calculadora{
+        border-radius: 30px;
+        position: absolute;
+        background-color: black;
+        top: 50%;
+        left: 50vw;
+        transform: translate(-50%,-50%);
+        border-style: double;
+        padding: 40px;
+}
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .fundo{
+            background-color: rgb(25, 39, 78);
+            height: 100vh;
+            color: rgb(184, 18, 18);
+            font-family: fantasy;
+            text-align: center;
+        }
+        
+        
+        .botao{
+            border-radius: 30px;
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: blue;
+            color: blueviolet;
+        }
+        
+        #resultado{
+            background-color: white;
+            width: 207px;
+            height: 30px;
+            margin: 5px;
+            font-size: 20px;
+            color: black;
+            text-align: right;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fundo">Calculadora</h1>
+    <div class="fundo">
+        
+        <div class="calculadora">
+           
+             <!-- lugar onde vai aparecer os resultados -->
+             <input type="number" id="result2" name="nmResult2" disabled value="" > 
+            <div>
+                <div>
+                    <!-- Botões da calduladora -->
+                    <input type="button" id="idLimparTudo" name="nmLimparTudo" value="C" class="botao" onclick="resetar()">
+                    <input type="button" id="idlimpar1" name="nmlimpar1" value="<" class="botao" onclick="limpar()">
+                    <input type="button" id="idDivisao" name="nmDivisao" value="/" class="botao" onclick="divisao()">
+                    <!-- Botão da operação -->
+                    <input type="button" id="idMultiplicacao" name="nmMultiplicacao" value="x" class="botao" onclick="multiplicacao()">
+                </div>
+                <div>
+                    <input type="button" id="idNum7" name="nm7" value="7" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum8" name="nm8" value="8" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum9" name="nm9" value="9" class="botao" onclick="inserir()">
+                    <!-- Botão da operação-->
+                    <input type="button" id="idSubtracao" name="nmSubtracao" value="-" class="botao" onclick="subtracao()">
+                <div>
+                </div>
+                    <input type="button" id="idNum4" name="nm4" value="4" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum5" name="nm5" value="5" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum6" name="nm6" value="6" class="botao" onclick="inserir()">
+                    <!-- Botão da operação -->
+                    <input type="button" id="idSomar" name="nmSomar" value="+" class="botao" onclick="soma()">
+                 
+                </div>
+                <div>
+                    <input type="button" id="idNum4" name="nm1" value="1" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum4" name="nm2" value="2" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum4" name="nm3" value="3" class="botao" onclick="inserir()">
+                    <!-- Botão da operação -->
+                    <input type="button" id="idCalcular" name="nmCalcular" value="=" class="botao" onclick="calcular()">
+                </div>
+                <div>
+                    <input type="button" id="idNum0" name="nm0" value="0" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum00" name="nm00" value="00" class="botao" onclick="inserir()">
+                    <input type="button" id="idNum000" name="nm000" value="000" class="botao" onclick="inserir()">
+                    <input type="button" id="idPonto" name="nmPonto" value="." class="botao" onclick="inserir()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      
+    </script>
+</body>
+</html>
