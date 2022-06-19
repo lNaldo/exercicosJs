@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idNumeros">Digitar numeros:</label><br>
+        <input type="number" id="idNumeros">
+        <br><br>
+        <input type="button" value="Incluir" onclick="testarNum()">
+        <br><br>
+
+        <output id="idOut"></output>
+        
+        
+    </form>
+
+    <script>
+            var numeros = []
+            var contNumeros = 0
+            var out = document.getElementById("idOut")
+            var resultado = document.getElementById("idResultado")
+            out.value = "O Numero aparece nas posições: "
+            
+            for (let i = 0; i < 30; i++) {
+                
+                numeros.push(sortearNum(15));
+            }
+            console.table(numeros)
+            
+
+            
+            function sortearNum(limite) {
+                
+                let num = parseInt(Math.random() * limite)
+                return num 
+            }
+
+
+            function testarNum() {
+                
+                let numInpu = (Number(document.getElementById("idNumeros").value))
+
+                for (let i = 0; i < numeros.length; i++) {
+                    
+                    if (numeros[i] == numInpu) {
+                        out.value = out.value + i + " / " 
+                        contNumeros++
+                    }
+                    
+                }
+                
+                out.value = out.value + " ( " + numInpu + " ) " + "vezes que o numero apareceu. "
+            }
+
+
+
+        </script>          
+    </script>
+</body>
+</html>
